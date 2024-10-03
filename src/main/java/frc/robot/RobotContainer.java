@@ -25,7 +25,7 @@ public class RobotContainer {
   private final CommandXboxController m_driverController =
       new CommandXboxController(OperatorConstants.kDriverControllerPort);
 
-  private final DrivebaseSubsys drivebaseSubsys =
+  private final DrivebaseSubsys drivebase =
     new DrivebaseSubsys(DrivebaseConstants.drivebaseMotorL1Id, DrivebaseConstants.drivebaseMotorL2Id, DrivebaseConstants.drivebaseMotorR1Id, DrivebaseConstants.drivebaseMotorR2Id,
       DrivebaseConstants.drivebaseMotorL1Invert, DrivebaseConstants.drivebaseMotorL2Invert, DrivebaseConstants.drivebaseMotorR1Invert, DrivebaseConstants.drivebaseMotorR2Invert);
 
