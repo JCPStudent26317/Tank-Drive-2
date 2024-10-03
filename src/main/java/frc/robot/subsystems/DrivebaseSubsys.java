@@ -26,20 +26,6 @@ public class DrivebaseSubsys extends SubsystemBase {
     motorR2.setInverted(motorR2Invert);
   }
 
-  /**
-   * Example command factory method.
-   *
-   * @return a command
-   */
-  /*public Command exampleMethodCommand() {
-    // Inline construction of command goes here.
-    // Subsystem::RunOnce implicitly requires `this` subsystem.
-    return runOnce(
-        () -> {
-           one-time action goes here 
-        });
-  }*/
-
   public void setSpeeds(double speedL, double speedR){
     motorL1.set(speedL);
     motorL2.set(speedL);
