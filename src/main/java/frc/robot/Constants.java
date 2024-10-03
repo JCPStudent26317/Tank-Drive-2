@@ -7,6 +7,8 @@ package frc.robot;
 public final class Constants {
   public static class OperatorConstants {
     public static final int kDriverControllerPort = 0;
+
+    public static final double deadzone = 0.1;
   }
 
   public static class DrivebaseConstants {
