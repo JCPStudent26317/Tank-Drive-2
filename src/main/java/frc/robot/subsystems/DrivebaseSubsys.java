@@ -40,6 +40,20 @@ public class DrivebaseSubsys extends SubsystemBase {
         });
   }*/
 
+  public void setSpeeds(double speedL, double speedR){
+    motorL1.set(speedL);
+    motorL2.set(speedL);
+    motorR1.set(speedR);
+    motorR2.set(speedR);            
+  }
+
+  public void setSpeedsIndividual(double speedL1, double speedL2, double speedR1, double speedR2) {
+    motorL1.set(speedL1);
+    motorL2.set(speedL2);
+    motorR1.set(speedR1);
+    motorR2.set(speedR2);
+  }
+
   @Override
   public void periodic() {
     
