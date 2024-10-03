@@ -21,7 +21,12 @@ public final class Constants {
     public static final int drivebaseMotorL1Id = 1;
     public static final int drivebaseMotorL2Id = 2;
     public static final int drivebaseMotorR1Id = 3;
-    public static final int drivebaseMotorR2Id = 4;            
+    public static final int drivebaseMotorR2Id = 4;
+    
+    public static final boolean drivebaseMotorL1Invert = false;
+    public static final boolean drivebaseMotorL2Invert = false;
+    public static final boolean drivebaseMotorR1Invert = false;
+    public static final boolean drivebaseMotorR2Invert = false;
   }
 
 }
