@@ -4,6 +4,7 @@
 
 package frc.robot.commands;
 
+import frc.robot.Constants.DrivebaseConstants;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.subsystems.DrivebaseSubsys;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -30,8 +31,8 @@ public class ArcadeDriveCmd extends Command {
   @Override
   public void execute() {
     //this is quite basic, probably need to add pid to it
-    double speed = deadzone(joystickSpeed.get(), OperatorConstants.deadzone);
-    double turn = deadzone(joystickTurn.get(), OperatorConstants.deadzone);
+    double speed = deadzone(joystickSpeed.get(), OperatorConstants.deadzone) * DrivebaseConstants.drivebaseDriveMult;
+    double turn = deadzone(joystickTurn.get(), OperatorConstants.deadzone) * DrivebaseConstants.drivebaseTurnMult;
 
     double left = speed + turn;
     double right = speed - turn;
