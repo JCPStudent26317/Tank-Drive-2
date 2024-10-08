@@ -21,7 +21,7 @@ public class ArcadeDriveCmd extends Command {
     this.drivebase = drivebase;
     this.joystickSpeed = joystickSpeed;
     this.joystickTurn = joystickTurn;
-    addRequirements();
+    addRequirements(drivebase);
   }
 
   @Override
@@ -29,6 +29,7 @@ public class ArcadeDriveCmd extends Command {
 
   @Override
   public void execute() {
+    //this is quite basic, probably need to add pid to it
     double speed = deadzone(joystickSpeed.get(), OperatorConstants.deadzone);
     double turn = deadzone(joystickTurn.get(), OperatorConstants.deadzone);
 
