@@ -5,41 +5,45 @@
 package frc.robot.subsystems;
 
 import com.ctre.phoenix6.hardware.TalonFX;
+import com.revrobotics.CANSparkLowLevel;
+import com.revrobotics.CANSparkMax;
+import com.revrobotics.CANSparkMaxLowLevel;
 
+import edu.wpi.first.wpilibj.motorcontrol.Spark;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
 public class DrivebaseSubsys extends SubsystemBase {
 
-  private TalonFX motorL1, motorL2, motorR1, motorR2;
+  private CANSparkMax motorL1, motorL2, motorR1, motorR2;
   
   public DrivebaseSubsys(int motorL1Id, int motorL2Id, int motorR1Id, int motorR2Id, 
   boolean motorL1Invert, boolean motorL2Invert, boolean motorR1Invert, boolean motorR2Invert) {
-    motorL1 = new TalonFX(motorL1Id);
-    motorL2 = new TalonFX(motorL2Id);  
-    motorR1 = new TalonFX(motorR1Id);
-    motorR2 = new TalonFX(motorR2Id);
+    motorL1 = new CANSparkMax(motorL1Id, CANSparkLowLevel.MotorType.kBrushless);
+    motorL2 = new CANSparkMax(motorL2Id, CANSparkLowLevel.MotorType.kBrushless);  
+    motorR1 = new CANSparkMax(motorR1Id, CANSparkLowLevel.MotorType.kBrushless);
+    motorR2 = new CANSparkMax(motorR2Id, CANSparkLowLevel.MotorType.kBrushless);
 
     motorL1.setInverted(motorL1Invert);
-    motorL2.setInverted(motorL2Invert);
     motorR1.setInverted(motorR1Invert);
-    motorR2.setInverted(motorR2Invert);
+
+    motorL2.follow(motorL1, motorL2Invert);
+    motorR2.follow(motorR1, motorL2Invert);
   }
 
   public void setSpeeds(double speedL, double speedR){
     motorL1.set(speedL);
-    motorL2.set(speedL);
     motorR1.set(speedR);
-    motorR2.set(speedR);            
   }
 
+  /*
   public void setSpeedsIndividual(double speedL1, double speedL2, double speedR1, double speedR2) {
     motorL1.set(speedL1);
     motorL2.set(speedL2);
     motorR1.set(speedR1);
     motorR2.set(speedR2);
   }
-
+ */
   @Override
   public void periodic() {
     
