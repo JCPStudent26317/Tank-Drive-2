@@ -28,7 +28,7 @@ public class DrivebaseSubsys extends SubsystemBase {
     motorR1.setInverted(motorR1Invert);
 
     motorL2.follow(motorL1, motorL2Invert);
-    motorR2.follow(motorR1, motorL2Invert);
+    motorR2.follow(motorR1, motorR2Invert);
   }
 
   public void setSpeeds(double speedL, double speedR){
