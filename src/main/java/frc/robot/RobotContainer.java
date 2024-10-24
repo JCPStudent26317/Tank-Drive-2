@@ -7,6 +7,7 @@ package frc.robot;
 import frc.robot.Constants.DrivebaseConstants;
 import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.ArcadeDriveCmd;
+import frc.robot.commands.AutoDriveForwardCmd;
 import frc.robot.commands.Autos;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DrivebaseSubsys;
@@ -40,6 +41,6 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
-    return null;
+    return new AutoDriveForwardCmd(drivebase);
   }
 }

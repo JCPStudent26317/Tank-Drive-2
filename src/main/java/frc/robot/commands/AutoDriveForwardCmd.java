@@ -23,12 +23,12 @@ public class AutoDriveForwardCmd extends Command {
 
   @Override
   public void execute() {
-
+    drivebase.setSpeeds(0.5, 0.5);
   }
 
   @Override
   public void end(boolean interrupted) {
-
+    drivebase.setSpeeds(0.0, 0.0);
   }
 
   public double getTimeSinceStart() {
