@@ -34,7 +34,6 @@ public class DrivebaseSubsys extends SubsystemBase {
   public void setSpeeds(double speedL, double speedR){
     motorL1.set(speedL);
     motorR1.set(speedR);
-    System.out.println("DRIVETRAIN: " + speedL + ", " + speedR);
   }
 
   /*
