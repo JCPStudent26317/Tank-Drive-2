@@ -23,7 +23,11 @@ public class AutoDriveForwardCmd extends Command {
 
   @Override
   public void execute() {
-    drivebase.setSpeeds(0.5, 0.5);
+    if(getTimeSinceStart() <= 3.0){
+      drivebase.setSpeeds(0.5, 0.5);
+    }else {
+      drivebase.setSpeeds(0, 0);
+    }
   }
 
   @Override
@@ -37,9 +41,10 @@ public class AutoDriveForwardCmd extends Command {
 
   @Override
   public boolean isFinished() {
-    if(getTimeSinceStart() > 3.0) {
+    /*if(getTimeSinceStart() > 3.0) {
         return true;
     }
-    else return false;
+    else return false;*/
+    return false;
   }
 }
