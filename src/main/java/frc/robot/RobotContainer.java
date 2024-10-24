@@ -29,7 +29,7 @@ public class RobotContainer {
 
   public RobotContainer() {
     drivebase.setDefaultCommand(new ArcadeDriveCmd(drivebase, () -> -1 * m_driverController.getLeftY(), () -> m_driverController.getRightX()));
-
+    System.out.println("Robot container constructor");
     configureBindings();
   }
 
