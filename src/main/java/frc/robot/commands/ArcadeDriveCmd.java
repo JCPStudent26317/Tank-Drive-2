@@ -38,6 +38,7 @@ public class ArcadeDriveCmd extends Command {
     double right = speed - turn;
 
     drivebase.setSpeeds(left, right);
+    System.out.println(left + ", " + right);
   }
 
   @Override
