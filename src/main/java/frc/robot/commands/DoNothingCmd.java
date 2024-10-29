@@ -26,7 +26,7 @@ public class DoNothingCmd extends Command {
 
   @Override
   public void end(boolean interrupted) {
-    System.out.println("Do nothing CMD end");
+    System.out.println("Do nothing cmd end");
   }
 
   @Override
