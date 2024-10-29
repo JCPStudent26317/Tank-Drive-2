@@ -7,18 +7,17 @@ import frc.robot.subsystems.DrivebaseSubsys;
 
 public class AutoDriveForwardCmd extends Command {
   private final DrivebaseSubsys drivebase;
-  private final double startTime;
+  private double startTime;
 
   public AutoDriveForwardCmd(DrivebaseSubsys drivebaseSubsys) {
     drivebase = drivebaseSubsys;
     addRequirements(drivebase);
 
-    startTime = Timer.getFPGATimestamp();
   }
 
   @Override
   public void initialize() {
-
+    startTime = Timer.getFPGATimestamp();
   }
 
   @Override
