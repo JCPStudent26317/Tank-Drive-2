@@ -13,6 +13,8 @@ import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DrivebaseSubsys;
 import frc.robot.subsystems.ExampleSubsystem;
 import edu.wpi.first.wpilibj.Joystick;
+import edu.wpi.first.wpilibj.smartdashboard.SendableChooser;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
 import edu.wpi.first.wpilibj2.command.button.JoystickButton;
@@ -27,7 +29,14 @@ public class RobotContainer {
     new DrivebaseSubsys(DrivebaseConstants.drivebaseMotorL1Id, DrivebaseConstants.drivebaseMotorL2Id, DrivebaseConstants.drivebaseMotorR1Id, DrivebaseConstants.drivebaseMotorR2Id,
       DrivebaseConstants.drivebaseMotorL1Invert, DrivebaseConstants.drivebaseMotorL2Invert, DrivebaseConstants.drivebaseMotorR1Invert, DrivebaseConstants.drivebaseMotorR2Invert);
 
+  private final SendableChooser autonChooser;
+
   public RobotContainer() {
+    autonChooser = new SendableChooser<Command>();
+    autonChooser.setDefaultOption("Do Nothing", new AutoDriveForwardCmd(drivebase));
+    autonChooser.addOption("Drive Forward", new AutoDriveForwardCmd(drivebase));
+    SmartDashboard.putData(autonChooser);
+
     drivebase.setDefaultCommand(new ArcadeDriveCmd(drivebase, () -> -1 * m_driverController.getLeftY(), () -> m_driverController.getRightX()));
     configureBindings();
   }
