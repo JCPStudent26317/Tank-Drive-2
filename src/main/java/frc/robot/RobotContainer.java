@@ -9,6 +9,7 @@ import frc.robot.Constants.OperatorConstants;
 import frc.robot.commands.ArcadeDriveCmd;
 import frc.robot.commands.AutoDriveForwardCmd;
 import frc.robot.commands.Autos;
+import frc.robot.commands.DoNothingCmd;
 import frc.robot.commands.ExampleCommand;
 import frc.robot.subsystems.DrivebaseSubsys;
 import frc.robot.subsystems.ExampleSubsystem;
@@ -33,7 +34,7 @@ public class RobotContainer {
 
   public RobotContainer() {
     autonChooser = new SendableChooser<Command>();
-    autonChooser.setDefaultOption("Do Nothing", new AutoDriveForwardCmd(drivebase));
+    autonChooser.setDefaultOption("Do Nothing", new DoNothingCmd());
     autonChooser.addOption("Drive Forward", new AutoDriveForwardCmd(drivebase));
     SmartDashboard.putData(autonChooser);
 
