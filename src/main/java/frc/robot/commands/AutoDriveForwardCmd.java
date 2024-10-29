@@ -12,12 +12,12 @@ public class AutoDriveForwardCmd extends Command {
   public AutoDriveForwardCmd(DrivebaseSubsys drivebaseSubsys) {
     drivebase = drivebaseSubsys;
     addRequirements(drivebase);
-
   }
 
   @Override
   public void initialize() {
     startTime = Timer.getFPGATimestamp();
+    System.out.println("Auto drive forward cmd start");
   }
 
   @Override
@@ -27,11 +27,13 @@ public class AutoDriveForwardCmd extends Command {
     }else {
       drivebase.setSpeeds(0, 0);
     }
+    System.out.println(getTimeSinceStart());
   }
 
   @Override
   public void end(boolean interrupted) {
     drivebase.setSpeeds(0.0, 0.0);
+    System.out.println("Auto drive forward cmd end");
   }
 
   public double getTimeSinceStart() {
