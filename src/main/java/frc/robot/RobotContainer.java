@@ -50,6 +50,6 @@ public class RobotContainer {
   }
 
   public Command getAutonomousCommand() {
-    return new AutoDriveForwardCmd(drivebase);
+    return (Command) autonChooser.getSelected();
   }
 }
