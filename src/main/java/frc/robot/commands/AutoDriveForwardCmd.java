@@ -18,7 +18,7 @@ public class AutoDriveForwardCmd extends Command {
 
   @Override
   public void initialize() {
-
+    System.out.println("Auto drive forward cmd start");
   }
 
   @Override
@@ -33,6 +33,7 @@ public class AutoDriveForwardCmd extends Command {
   @Override
   public void end(boolean interrupted) {
     drivebase.setSpeeds(0.0, 0.0);
+    System.out.println("Auto drive forward cmd end");
   }
 
   public double getTimeSinceStart() {
