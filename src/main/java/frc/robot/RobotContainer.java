@@ -33,10 +33,12 @@ public class RobotContainer {
   private final SendableChooser autonChooser;
 
   public RobotContainer() {
+    SmartDashboard.putData("Drivebase", drivebase);
+    
     autonChooser = new SendableChooser<Command>();
     autonChooser.setDefaultOption("Do Nothing", new DoNothingCmd());
     autonChooser.addOption("Drive Forward", new AutoDriveForwardCmd(drivebase));
-    SmartDashboard.putData(autonChooser);
+    SmartDashboard.putData("Autonomous Command", autonChooser);
 
     drivebase.setDefaultCommand(new ArcadeDriveCmd(drivebase, () -> -1 * m_driverController.getLeftY(), () -> m_driverController.getRightX()));
     configureBindings();
