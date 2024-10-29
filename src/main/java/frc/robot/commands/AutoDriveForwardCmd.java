@@ -28,6 +28,7 @@ public class AutoDriveForwardCmd extends Command {
     }else {
       drivebase.setSpeeds(0, 0);
     }
+    System.out.println(getTimeSinceStart());
   }
 
   @Override

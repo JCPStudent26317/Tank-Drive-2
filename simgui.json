@@ -26,6 +26,8 @@
   "NTProvider": {
     "types": {
       "/FMSInfo": "FMSInfo",
+      "/SmartDashboard/Autonomous Command": "String Chooser",
+      "/SmartDashboard/Drivebase": "Subsystem",
       "/SmartDashboard/SendableChooser[0]": "String Chooser"
     }
   },
