@@ -21,7 +21,7 @@ public final class Constants {
     public static final boolean drivebaseMotorL1Invert = false;
     public static final boolean drivebaseMotorL2Invert = false;
     public static final boolean drivebaseMotorR1Invert = true;
-    public static final boolean drivebaseMotorR2Invert = true;
+    public static final boolean drivebaseMotorR2Invert = false;
 
     public static final double drivebaseDriveMult = 0.7;
     public static final double drivebaseTurnMult = 0.3;
