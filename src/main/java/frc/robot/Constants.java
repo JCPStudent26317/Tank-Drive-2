@@ -12,10 +12,10 @@ public final class Constants {
   }
 
   public static class DrivebaseConstants {
-    public static final int drivebaseMotorL1Id = 1;
-    public static final int drivebaseMotorL2Id = 2;
-    public static final int drivebaseMotorR1Id = 3;
-    public static final int drivebaseMotorR2Id = 4;
+    public static final int drivebaseMotorL1Id = 11;
+    public static final int drivebaseMotorL2Id = 12;
+    public static final int drivebaseMotorR1Id = 21;
+    public static final int drivebaseMotorR2Id = 22;
     
     //Should be set up so that a positive input to all the motors leads to the robot moving straight forward.
     public static final boolean drivebaseMotorL1Invert = false;
