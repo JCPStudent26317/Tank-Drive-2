@@ -32,8 +32,8 @@ public class DrivebaseSubsys extends SubsystemBase {
   }
 
   public void setSpeeds(double speedL, double speedR){
-    motorL1.set(speedL);
-    motorR1.set(speedR);
+    motorL1.set(deadzone(speedL, 0.1));
+    motorR1.set(deadzone(speedR, 0.1));
   }
 
   /*
@@ -53,4 +53,9 @@ public class DrivebaseSubsys extends SubsystemBase {
   public void simulationPeriodic() {
     
   }
+
+  public double deadzone(double input, double zone) {
+    return Math.abs(input - zone) <= input ? 0 : input; 
+  }
+
 }
