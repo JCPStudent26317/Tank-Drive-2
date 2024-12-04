@@ -1,0 +1,6 @@
+Motor IDs:
+
+Drivetrain L1: 11
+Drivetrain L2: 12
+Drivetrain R1: 21
+Drivetrain R2: 22
